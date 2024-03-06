@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T17:42:53.049Z",
+    "end": "2024-03-06T17:43:01.889Z",
+    "duration": 8840,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1d0ce726-2ea8-4aa0-8a8d-69b0696f1760",
+      "title": "",
+      "fullFile": "cypress\\e2e\\blogdoagi.cy.js",
+      "file": "cypress\\e2e\\blogdoagi.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1dd9f041-9186-4161-9ede-ede418698e0d",
+          "title": "Teste de Pesquisa de Artigos Blog do Agi",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Pesquisar por um termo com resultados válidos",
+              "fullTitle": "Teste de Pesquisa de Artigos Blog do Agi Pesquisar por um termo com resultados válidos",
+              "timedOut": null,
+              "duration": 2988,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const termoPesquisa = 'Pix';\ncy.realizarBuscaPorTermo(termoPesquisa);\ncy.validarResultadosDaBusca(termoPesquisa);",
+              "err": {},
+              "uuid": "8c215824-1332-4f2d-8c6c-9ed18328e3e6",
+              "parentUUID": "1dd9f041-9186-4161-9ede-ede418698e0d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pesquisar por um termo sem resultados para mostrar",
+              "fullTitle": "Teste de Pesquisa de Artigos Blog do Agi Pesquisar por um termo sem resultados para mostrar",
+              "timedOut": null,
+              "duration": 1097,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const termoPesquisa = 'tsts';\ncy.realizarBuscaPorTermo(termoPesquisa);\ncy.validarSemResultadosParaExibir(termoPesquisa);",
+              "err": {},
+              "uuid": "cfc61f2c-ac92-4b9d-9aa2-ef5b216d551c",
+              "parentUUID": "1dd9f041-9186-4161-9ede-ede418698e0d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Acessar um artigo por termo pesquisado",
+              "fullTitle": "Teste de Pesquisa de Artigos Blog do Agi Acessar um artigo por termo pesquisado",
+              "timedOut": null,
+              "duration": 2691,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const termoPesquisa = 'Pix';\ncy.realizarBuscaPorTermo(termoPesquisa);\ncy.validarResultadosDaBusca(termoPesquisa);\ncy.abrirArtigo();\ncy.validarArtigoExibido(termoPesquisa);",
+              "err": {},
+              "uuid": "06b3853f-caba-4b1f-a25e-a9a94378a48c",
+              "parentUUID": "1dd9f041-9186-4161-9ede-ede418698e0d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8c215824-1332-4f2d-8c6c-9ed18328e3e6",
+            "cfc61f2c-ac92-4b9d-9aa2-ef5b216d551c",
+            "06b3853f-caba-4b1f-a25e-a9a94378a48c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6776,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "[name]-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

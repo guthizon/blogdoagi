@@ -1,0 +1,41 @@
+{
+  "reports": [
+    {
+      "targets": [
+        {
+          "name": "slack",
+          "condition": "passOrFail",
+          "inputs": {
+            "title": "HaulSafe Functional Tests",
+            "url": "https://hooks.slack.com/services/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"
+          },
+          "extensions": [
+            {
+              "name": "quick-chart-test-summary"
+            },
+            {
+              "name": "hyperlinks",
+              "condition": "passOrFail",
+              "inputs": {
+                "links": [
+                  {
+                    "text": "View Report Results",
+                    "url": "https://haulapp.github.io/haulsafe-e2e-tests/"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "type": "mocha",
+          "files": [
+            "cypress/reports/mochareports/report.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

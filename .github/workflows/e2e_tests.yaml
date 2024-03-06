@@ -1,0 +1,49 @@
+name: Blog do Agi E2E Cypress Tests
+
+on:
+  workflow_dispatch:
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test
+        
+      - name: Merge test results
+        run: npm run combine-reports
+        if: always()
+      
+      - name: Generate HTML report
+        run: npm run generate-report
+        if: always()
+      
+      - name: Change report name
+        run: mv cypress/reports/mochareports/report.html cypress/reports/mochareports/index.html
+        if: always()
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: result
+          path: | 
+            cypress/reports
+      
+      - name: Upload test video
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos 
+      
+      - name: Deploy report to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: cypress/reports/mochareports
