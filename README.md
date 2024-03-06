@@ -55,6 +55,7 @@ cypress.config.json: Cypress configuration file.
 
 cypress/commands: Commands tu execute the test actions.
 
+## Author
 
 Copyright © 2024 Blog do AGI.
 
