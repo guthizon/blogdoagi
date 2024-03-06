@@ -24,7 +24,7 @@ npm install
 
 ## Running Tests
 
-To run the tests, you can use the npm run cypress:open command, which will open the Cypress Test Runner interface, where you can manually select and run the tests.
+To run the locally, you can use the npm run cypress:open command, which will open the Cypress Test Runner interface, where you can manually select and run the tests.
 
 To run tests in headless mode (without a graphical interface), you can use the npm test or npm run cypress:run command.
 
