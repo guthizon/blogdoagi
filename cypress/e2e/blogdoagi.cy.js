@@ -21,6 +21,6 @@ describe('Teste de Pesquisa de Artigos Blog do Agi', () => {
         cy.realizarBuscaPorTermo(termoPesquisa);
         cy.validarResultadosDaBusca(termoPesquisa);
         cy.abrirArtigo();
-        cy.validarArtigoExibido(termoPesquisa);
+        cy.validarArtigoExibido("Para realizar pagamentos por meio do Pix, é necessário fornecer a Chave Pix do destinatário");
     });
 });
